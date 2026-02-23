@@ -80,7 +80,32 @@
         });
     }
 
-    
+    function deleteJob(id) {
+        jobs = jobs.filter(j => j.id !== id);
+        renderJobs();
+        updateStats();
+    }
+
+    function updateStatus(id, newStatus) {
+        jobs = jobs.map(j => j.id === id ? {...j, status: newStatus} : j);
+        renderJobs();
+        updateStats();
+    }
+
+    function filterJobs(status) {
+        activeFilter = status;
+        renderJobs();
+    }
+
+    function updateStats() {
+        document.getElementById('totalCount').innerText = jobs.length;
+        document.getElementById('interviewCount').innerText = jobs.filter(j => j.status === 'INTERVIEW').length;
+        document.getElementById('rejectedCount').innerText = jobs.filter(j => j.status === 'REJECTED').length;
+    }
+
+    // 1st reder ekhane...
+    renderJobs();
+    updateStats();
 </script>
 </body>
 </html>
