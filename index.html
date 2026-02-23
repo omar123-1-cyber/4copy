@@ -7,6 +7,24 @@
 </head>
 <body class="bg-gray-100 p-6">
 
+<div class="max-w-4xl mx-auto">
+    <h1 class="text-3xl font-bold mb-6 text-slate-800">Job Application Tracker</h1>
+    
+    <div class="stats shadow w-full mb-6 grid grid-cols-3">
+        <div class="stat"><div class="stat-title">Total</div><div class="stat-value" id="totalCount">8</div></div>
+        <div class="stat"><div class="stat-title">Interview</div><div class="stat-value text-green-600" id="interviewCount">0</div></div>
+        <div class="stat"><div class="stat-title">Rejected</div><div class="stat-value text-red-600" id="rejectedCount">0</div></div>
+    </div>
+
+    <div class="flex gap-2 mb-6">
+        <button class="btn btn-primary" onclick="filterJobs('ALL')">ALL</button>
+        <button class="btn btn-success text-white" onclick="filterJobs('INTERVIEW')">INTERVIEW</button>
+        <button class="btn btn-error text-white" onclick="filterJobs('REJECTED')">REJECTED</button>
+    </div>
+
+    <div id="jobList" class="space-y-4"></div>
+</div>
+
 
 </body>
 </html>
