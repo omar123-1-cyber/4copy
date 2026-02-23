@@ -26,6 +26,7 @@
 </div>
 
 <script>
+    //card bananor jonno data gula ekta array te rakhlam...jate coed gula clean thake...
     let jobs = [
         { id: 1, company: "Mobile First Corp", role: "React Native Developer", info: "Remote . Full-time", status: "NOT APPLIED" },
         { id: 2, company: "WebFlow Agency", role: "Web Designer", info: "Onsite . Part-time", status: "NOT APPLIED" },
@@ -37,7 +38,24 @@
         { id: 8, company: "DevOps Co", role: "System Admin", info: "Remote . Full-time", status: "NOT APPLIED" }
     ];
 
-    
+    let activeFilter = 'ALL';
+
+    function renderJobs() {
+        const list = document.getElementById('jobList');
+        list.innerHTML = '';
+        
+        const filteredJobs = activeFilter === 'ALL' ? jobs : jobs.filter(j => j.status === activeFilter);
+        
+        // jodi filter kora list khali hoy tahole ekta message dekhabe...
+        if (filteredJobs.length === 0) {
+            list.innerHTML = `
+            <div class="card bg-white p-20 shadow-sm border text-center">
+                <p class="text-gray-500 font-semibold text-lg">No jobs available</p>
+            </div>`;
+            return;
+        }
+        
+        
 </script>
 </body>
 </html>
