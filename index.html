@@ -55,7 +55,32 @@
             return;
         }
         
-        
+        filteredJobs.forEach(job => {
+            list.innerHTML += `
+            <div class="card bg-white p-6 shadow-sm border relative">
+                <button onclick="deleteJob(${job.id})" class="absolute top-4 right-4 text-gray-400 hover:text-red-500 transition">
+                    <i class="fas fa-trash-alt"></i>
+                </button>
+                
+                <h2 class="text-xl font-bold">${job.company}</h2>
+                <p class="text-gray-500">${job.role}</p>
+                <p class="text-sm text-gray-400 mt-1">${job.info}</p>
+                
+                <div class="mt-4">
+                    <span class="bg-blue-100 text-blue-800 text-xs font-bold px-3 py-1 rounded uppercase">
+                        ${job.status}
+                    </span>
+                </div>
+                
+                <div class="flex gap-3 mt-5">
+                    <button class="btn btn-outline btn-success btn-sm" onclick="updateStatus(${job.id}, 'INTERVIEW')">INTERVIEW</button>
+                    <button class="btn btn-outline btn-error btn-sm" onclick="updateStatus(${job.id}, 'REJECTED')">REJECTED</button>
+                </div>
+            </div>`;
+        });
+    }
+
+    
 </script>
 </body>
 </html>
