@@ -11,11 +11,15 @@
     <h1 class="text-3xl font-bold mb-6 text-slate-800">Job Application Tracker</h1>
     
     <div class="stats shadow w-full mb-6 grid grid-cols-3">
-        <div class="stat"><div class="stat-title">Total</div><div class="stat-value" id="totalCount">8</div></div>
-        <div class="stat"><div class="stat-title">Interview</div><div class="stat-value text-green-600" id="interviewCount">0</div></div>
-        <div class="stat"><div class="stat-title">Rejected</div><div class="stat-value text-red-600" id="rejectedCount">0</div></div>
-    </div>
+        <div class="stat">
+            <div class="stat-title">Total</div>
+            <div class="stat-value" id="totalCount">8</div></div>
 
+            <div class="stat"><div class="stat-title">Interview</div><div class="stat-value text-green-600" id="interviewCount">0</div></div>
+
+            <div class="stat"><div class="stat-title">Rejected</div><div class="stat-value text-red-600" id="rejectedCount">0</div></div>
+    </div>
+      <!-- daisy ui  -->
     <div class="flex gap-2 mb-6">
         <button class="btn btn-primary" onclick="filterJobs('ALL')">ALL</button>
         <button class="btn btn-success text-white" onclick="filterJobs('INTERVIEW')">INTERVIEW</button>
@@ -28,14 +32,29 @@
 <script>
     //card bananor jonno data gula ekta array te rakhlam...jate coed gula clean thake...
     let jobs = [
-        { id: 1, company: "Mobile First Corp", role: "React Native Developer", info: "Remote . Full-time", status: "NOT APPLIED" },
-        { id: 2, company: "WebFlow Agency", role: "Web Designer", info: "Onsite . Part-time", status: "NOT APPLIED" },
-        { id: 3, company: "DataViz Solutions", role: "Data Analyst", info: "Hybrid . Full-time", status: "NOT APPLIED" },
-        { id: 4, company: "Cloud Net", role: "Backend Engineer", info: "Remote . Full-time", status: "NOT APPLIED" },
-        { id: 5, company: "FinTech Hub", role: "Security Expert", info: "Remote . Contract", status: "NOT APPLIED" },
-        { id: 6, company: "Pixel Studio", role: "Frontend Dev", info: "Remote . Full-time", status: "NOT APPLIED" },
-        { id: 7, company: "GameZone", role: "Unity Developer", info: "Onsite . Full-time", status: "NOT APPLIED" },
-        { id: 8, company: "DevOps Co", role: "System Admin", info: "Remote . Full-time", status: "NOT APPLIED" }
+        { id: 1, company: "Mobile First Corp", role: "React Native Developer",
+         info: "Remote . Full-time", status: "NOT APPLIED" },
+
+        { id: 2, company: "WebFlow Agency", role: "Web Designer", info: "Onsite . Part-time",
+         status: "NOT APPLIED" },
+
+        { id: 3, company: "DataViz Solutions", role: "Data Analyst", info: "Hybrid . Full-time",
+         status: "NOT APPLIED" },
+
+        { id: 4, company: "Cloud Net", role: "Backend Engineer", info: "Remote . Full-time",
+         status: "NOT APPLIED" },
+
+        { id: 5, company: "FinTech Hub", role: "Security Expert", info: "Remote . Contract", 
+        status: "NOT APPLIED" },
+
+        { id: 6, company: "Pixel Studio", role: "Frontend Dev", info: "Remote . Full-time",
+         status: "NOT APPLIED" },
+
+        { id: 7, company: "GameZone", role: "Unity Developer", info: "Onsite . Full-time",
+         status: "NOT APPLIED" },
+
+        { id: 8, company: "DevOps Co", role: "System Admin", info: "Remote . Full-time",
+         status: "NOT APPLIED" }
     ];
 
     let activeFilter = 'ALL';
